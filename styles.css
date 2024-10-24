@@ -1,0 +1,103 @@
+/* Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Calendar Styles */
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    width: 1000px;
+    max-width: 100%;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-day {
+    padding: 20px;
+    background-color: #e3f2fd;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #2b2b2b;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Colors for task completion */
+.calendar-day.missed {
+    background-color: #f28b82; /* Red for missed days */
+}
+
+.calendar-day.current {
+    background-color: #fff176; /* Yellow for the current day */
+    cursor: pointer;
+}
+
+.calendar-day.completed {
+    background-color: #81c784; /* Green for completed days */
+}
+
+.calendar-day.future {
+    background-color: #cfd8dc; /* Grey for future days */
+}
+
+/* Input and Task Styles */
+.task-input {
+    width: 80%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.task-text {
+    color: #4caf50;
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Hover Effect */
+.calendar-day:hover {
+    transform: translateY(-5px);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .calendar {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .calendar {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}
